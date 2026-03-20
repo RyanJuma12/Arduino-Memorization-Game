@@ -173,7 +173,7 @@ cd Arduino-Memory-Game
 1. Click **PlatformIO: Upload** (right arrow icon).  
 2. The Arduino will reset, and the LCD should display:
 
-## Video of Functioing Breadboard - Excuse the messy wires :)
+## Video of Functioning Breadboard - Excuse the messy wires :)
 
 [Watch Demo Video](https://drive.google.com/file/d/1xiahg6mQPKFb43g2Cn1vwePqr69rT-Jt/view?usp=sharing)
 
