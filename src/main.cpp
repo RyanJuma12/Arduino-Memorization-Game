@@ -6,7 +6,7 @@ LiquidCrystal lcd(12,11,5,4,3,2);
 
 // ===== HARDWARE PINS =====
 const int ledPins[4] = {6,7,8,9};               // left→right
-const int buttonPins[4] = {A3,A2,A1,A0};        // mirrored wiring fix
+const int buttonPins[4] = {A3,A2,A1,A0};        
 const int buzzer = 10;
 
 // ===== GAME VARIABLES =====
@@ -30,9 +30,9 @@ int readButton();
 void flashLED(int led);
 void waitForRelease();
 
-// =========================
-// SETUP
-// =========================
+
+// SETUP 
+
 void setup() {
   lcd.begin(16,2);
 
@@ -50,9 +50,9 @@ void setup() {
   lcd.clear();
 }
 
-// =========================
-// MAIN LOOP
-// =========================
+
+// MAIN LOOP 
+
 void loop() {
 
   switch(state) {
@@ -79,9 +79,9 @@ void loop() {
   }
 }
 
-// =========================
+
 // START SCREEN
-// =========================
+
 void startScreen() {
 
   lcd.clear();
@@ -98,9 +98,9 @@ void startScreen() {
   state = NEXT_LEVEL;
 }
 
-// =========================
+
 // NEXT LEVEL
-// =========================
+
 void nextLevel() {
 
   pattern[level-1] = random(0,4);
@@ -114,9 +114,9 @@ void nextLevel() {
   state = SHOW_PATTERN;
 }
 
-// =========================
+
 // SHOW PATTERN
-// =========================
+
 void showPattern() {
 
   lcd.clear();
@@ -135,9 +135,9 @@ void showPattern() {
   state = PLAYER_INPUT;
 }
 
-// =========================
+
 // PLAYER INPUT
-// =========================
+
 void playerInput() {
 
   int btn = readButton();  // waits for fresh press
@@ -157,9 +157,8 @@ void playerInput() {
   }
 }
 
-// =========================
 // GAME OVER
-// =========================
+
 void gameOver() {
 
   lcd.clear();
@@ -174,9 +173,9 @@ void gameOver() {
   state = START;
 }
 
-// =========================
+
 // READ BUTTON (Fresh Press)
-// =========================
+
 int readButton() {
 
   // wait until all buttons are released
@@ -203,9 +202,9 @@ int readButton() {
   }
 }
 
-// =========================
+
 // FLASH LED
-// =========================
+
 void flashLED(int led) {
   digitalWrite(ledPins[led],HIGH);
   tone(buzzer, 700 + led*200);
@@ -215,9 +214,9 @@ void flashLED(int led) {
   delay(150);
 }
 
-// =========================
+
 // WAIT FOR BUTTON RELEASE
-// =========================
+
 void waitForRelease() {
   while(true){
     bool pressed = false;
